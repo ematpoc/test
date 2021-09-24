@@ -1,3 +1,3 @@
 import time
 
-time.sleep(60)
+print(10/0)
