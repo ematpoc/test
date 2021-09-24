@@ -2,10 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
-            steps {
-                echo 'Hello World'
-		sh './hello.sh'
+        stage('install python') {
+            steps {                
+		        sh 'python3 test.py '
             }
         }
     }
