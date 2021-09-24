@@ -4,13 +4,12 @@ pipeline {
     stages {
         stage('install python') {
             steps {
-                retry (3) {
-                    timeout(time:10, unit:'SECONDS')  {
-                     sh 'python3 test.py '
-                } 
-                }
+                sleep time:10
+                milestone label:'demo', ordinal:1
+                echo 'this build passed milestone'
                              		       
             }
         }
     }
 }
+
