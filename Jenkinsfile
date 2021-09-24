@@ -4,8 +4,12 @@ pipeline {
     stages {
         stage('install python') {
             steps {
-                timeout(time:10, unit:'SECONDS')                
-		        sh 'python3 test.py '
+                retry (3) {
+                    timeout(time:10, unit:'SECONDS')  {
+                     sh 'python3 test.py '
+                } 
+                }
+                             		       
             }
         }
     }
