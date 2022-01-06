@@ -10,13 +10,13 @@ pipeline {
     parameters {
         string(name: 'branch', defaultValue: 'main')
     }
-    stages {
-        stage('fetch') {
-            steps {
-                git branch: params.branch, url: 'https://github.com/ematpoc/test.git'
+    // stages {
+    //     stage('fetch') {
+    //         steps {
+    //             git branch: params.branch, url: 'https://github.com/ematpoc/test.git'
 
-            }
-        }
+    //         }
+    //     }
         
 
         stage('test application') {
