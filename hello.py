@@ -8,4 +8,4 @@ def hello() -> str:
    return 'Witaj, świecie, tu Flask!'
 
 
-app.run()
+app.run(port=9000)
