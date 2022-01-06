@@ -3,3 +3,9 @@ changes from test
 =======
 changes from main
 >>>>>>> main
+dupka
+dupka
+dupka
+dupka2
+dupka2
+dupka2
