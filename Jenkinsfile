@@ -1,5 +1,9 @@
 pipeline {
-    agent { label 'node 1'}
+    agent { 
+        node {
+            label 'docker-slave'
+            }
+    }
 
     stages {
         stage('install python') {
