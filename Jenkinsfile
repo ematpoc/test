@@ -3,9 +3,6 @@ def sc
 pipeline {
     agent any
 
-    // options {
-    //     pipelineTriggers([pollSCM('* * * * *')])
-    // }
     
     triggers { pollSCM('* * * * *') }
 
