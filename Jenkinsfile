@@ -24,7 +24,7 @@ pipeline {
 
         steps {
             echo 'bulding in progress...'
-            e
+            
         }
     }
 
