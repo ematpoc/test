@@ -4,6 +4,7 @@ pipeline {
     agent any
     environment {
         VERSION = '1.0.2'
+        creds = credentials('test')
     }
 
     parameters {
@@ -11,6 +12,7 @@ pipeline {
         choice(name: 'gender', choices: ['male', 'female'])
         booleanParam(name: 'executeTests', defaultValue: false)
     }
+
 
     stages {
 
@@ -33,6 +35,12 @@ pipeline {
             script {
                 sc = load 'hello.groovy'
             }
+        }
+    }
+
+    stage('run cred.sh') {
+        steps {
+            sh './creds.sh'
         }
     }
 

@@ -1,0 +1,2 @@
+echo creds: $1
+
