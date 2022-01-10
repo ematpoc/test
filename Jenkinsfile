@@ -6,8 +6,7 @@ pipeline {
     // options {
     //     pipelineTriggers([pollSCM('* * * * *')])
     // }
-    //
-    //
+    
     triggers { pollSCM('* * * * *') }
 
     environment {
