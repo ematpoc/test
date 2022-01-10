@@ -32,7 +32,7 @@ pipeline {
 
     stage('test creds') {
         steps {
-            withCredentials([usernamePassword(credentials: "test", usernameVariable: myuser, passwordvariable: mypswd)]) {
+            withCredentials([usernamePassword(credentials: "test", usernameVariable: 'myuser', passwordvariable: 'mypswd')]) {
                 sh "./creds.sh myuser mypswd"
             }
         }
