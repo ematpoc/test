@@ -3,9 +3,13 @@ def sc
 pipeline {
     agent any
 
-    options {
-        pipelineTriggers([pollSCM('* * * * *')])
+    // options {
+    //     pipelineTriggers([pollSCM('* * * * *')])
+    // }
+    triggers {
+        cron(*****)
     }
+
     environment {
         VERSION = '1.0.2'
         creds = credentials('test')
