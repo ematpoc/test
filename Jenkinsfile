@@ -1,46 +1,53 @@
-
+def sc
 
 pipeline {
-    agent {
-        node {
-            label 'docker-slave'
-        }
+    agent any
+    environment {
+        VERSION = '1.0.2'
     }
 
     parameters {
-        string(name: 'branch', defaultValue: 'main')
+        string(name: 'Name', defaultValue: 'Mateusz')
+        choice(name: 'gender', choices: ['male', 'female'])
+        booleanParam(name: 'executeTests', defaultValue: false)
     }
-    stages {
-    //     stage('fetch') {
-    //         steps {
-    //             git branch: params.branch, url: 'https://github.com/ematpoc/test.git'
 
-    //         }
-    //     }
-        
-
-        stage('test application') {
-            steps {
-                sh 'python3 hello.py &'
-                sh 'sleep 5'
-                sh 'curl localhost:9000'
+    stage('build') {
+        when {
+            expression {
+                BRANCH_NAME == 'main'
             }
         }
-        
-        
-        stage('build and push image') {
-            
-            steps {
-                sh 'whoami'
-                sh 'pwd'
-                catchError {
-                    script {
-                        
-                    def image = docker.build('ematpoc/flask-server:latest', '/home/jenkins/workspace/first-project/')
-                }
-                }
-                
-                sh 'sleep 100'
+
+        steps {
+            echo 'bulding in progress...'
+            e
+        }
+    }
+
+    stage('load hello.groovy') {
+        steps {
+            script {
+                sc = load 'hello.groovy'
+            }
+        }
+    }
+
+
+    stage('run hello.groovy') {
+        steps {
+            script {
+                sc.hello()
+            }
+        }
+    }
+
+    stage('run paramsTest') {
+
+        steps {
+            script {
+                pt = load 'paramsTest.groovy'
+                pt.test()
             }
         }
     }
