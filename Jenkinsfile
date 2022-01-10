@@ -12,6 +12,9 @@ pipeline {
         booleanParam(name: 'executeTests', defaultValue: false)
     }
 
+    stages {
+
+    
     stage('build') {
         when {
             expression {
@@ -50,6 +53,7 @@ pipeline {
                 pt.test()
             }
         }
+    }
     }
 }
 
