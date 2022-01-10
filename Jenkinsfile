@@ -7,7 +7,7 @@ pipeline {
     }
 
     parameters {
-        string(name: 'Name', defaultValue: 'Mateusz')
+        string(name: 'BranchName', defaultValue: 'dev')
         choice(name: 'gender', choices: ['male', 'female'])
         booleanParam(name: 'executeTests', defaultValue: false)
     }
