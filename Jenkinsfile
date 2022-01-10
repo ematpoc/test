@@ -72,13 +72,5 @@ pipeline {
     }
     }
 
-    post {
-        always {
-            
-                echo 'job done. We are in post execution'
-            
-        }
-
-    }
 }
 
