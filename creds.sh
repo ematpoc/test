@@ -1,2 +1,3 @@
-echo creds: $1
+echo uuser: $1
+echo passwd: $2
 
