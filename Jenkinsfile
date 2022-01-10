@@ -45,7 +45,7 @@ pipeline {
         }
     }
 
-    stage('run paramsTest') {
+    stage('run a paramsTest') {
 
         steps {
             script {
