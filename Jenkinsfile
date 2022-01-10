@@ -55,5 +55,14 @@ pipeline {
         }
     }
     }
+
+    post {
+        always {
+            steps {
+                echo 'job done. We are in post execution'
+            }
+        }
+
+    }
 }
 
