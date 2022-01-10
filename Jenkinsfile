@@ -40,7 +40,7 @@ pipeline {
 
     stage('run cred.sh') {
         steps {
-            sh './creds.sh'
+            sh "./creds.sh ${creds}"
         }
     }
 
