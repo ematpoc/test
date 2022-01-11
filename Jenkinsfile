@@ -20,8 +20,6 @@ pipeline {
                 }
             }
         }
-    }
-
     stage('create build output') {
         steps {
             writeFile file: "output/needed.txt", text: "This file is needed. It should be archived"
@@ -33,5 +31,8 @@ pipeline {
             archiveArtifacts artifacts: 'output/*.txt'
         }
     }
+
+    }
+    
 }
 
