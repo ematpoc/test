@@ -11,5 +11,14 @@ pipeline {
             }
             
         }
+
+        stage('hello again') {
+            steps {
+                script {
+                    file = load 'hello.groovy'
+                    file.hello()
+                }
+            }
+        }
     }
 }
