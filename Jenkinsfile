@@ -1,3 +1,5 @@
+
+@Library('demo-library') _
 def sc
 
 pipeline {
